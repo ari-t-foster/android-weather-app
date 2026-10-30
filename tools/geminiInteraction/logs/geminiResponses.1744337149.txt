@@ -1,0 +1,52 @@
+[
+    {
+        "category": "lifestyle",
+        "question": "Is it safe to go for a walk outside?"
+    },
+    {
+        "category": "lifestyle",
+        "question": "What kind of clothing is appropriate for the weather?"
+    },
+    {
+        "category": "tmyk",
+        "question": "Will the sky be clear tonight?"
+    },
+    {
+        "category": "wildcard",
+        "question": "What is the UV index today?"
+    }
+][
+    {
+        "category": "lifestyle",
+        "question": "Should I carry an umbrella?"
+    },
+    {
+        "category": "tmyk",
+        "question": "Are thunderstorms common in this area?"
+    },
+    {
+        "category": "prepper",
+        "question": "Are there any potential hazards associated with this weather?"
+    },
+    {
+        "category": "wildcard",
+        "question": "How long will the heavy rain last?"
+    }
+][
+    {
+        "category": "lifestyle",
+        "question": "Should I bring an umbrella?"
+    },
+    {
+        "category": "tmyk",
+        "question": "Is the wind chill a concern?"
+    },
+    {
+        "category": "prepper",
+        "question": "Are there any weather-related safety warnings?"
+    },
+    {
+        "category": "wildcard",
+        "question": "Will it be a good day for outdoor activities?"
+    }
+]

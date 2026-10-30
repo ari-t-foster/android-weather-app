@@ -1,0 +1,225 @@
+ Based on the input given, generate exactly 4 sets of questions and answers
+which a user might interested in asking and finding out the answer to, and which
+are relevant to the context of the current weather report you are receiving. The
+output question must be a single short sentence, ending in a question mark.
+Sample categories of questions include (but are not limited to): appropriate
+clothing or gear to wear or carry, preparing for exposure to elements, outdoor
+(or indoor) activities, weather safety information, record highs and lows,
+seasonability of current conditions for the current and nearby locations,
+historically significant weather events, astrological events and sky visibility.
+Base answers only on supplied weather observations. Do not invent forecasts,
+historical records, or future conditions. If sufficient data is unavailable,
+select a different question.
+
+
+INSTRUCT VERBIAGE:
+
+ Based on the input given, generate exactly 4 sets of questions and answers
+which a user might interested in asking and finding out the answer to, and which
+are relevant to the context of the current weather report you are receiving. The
+output question must be a single short sentence, ending in a question mark.
+Sample categories of questions include (but are not limited to): appropriate
+clothing or gear to wear or carry, preparing for exposure to elements, outdoor
+(or indoor) activities, weather safety information, record highs and lows,
+seasonability of current conditions for the current and nearby locations,
+historically significant weather events, astrological events and sky visibility.
+Base answers only on supplied weather observations. Do not invent forecasts,
+historical records, or future conditions. If sufficient data is unavailable,
+select a different question.
+
+
+GENERATED SCHEMA (RAW):
+
+{'$defs': {'WeatherQAPair': {'properties': {'question': {'description': 'Weather question', 'title': 'Question', 'type': 'string'}, 'answer': {'description': 'Weather answer', 'title': 'Answer', 'type': 'string'}}, 'required': ['question', 'answer'], 'title': 'WeatherQAPair', 'type': 'object'}}, 'properties': {'quadrant': {'items': {'$ref': '#/$defs/WeatherQAPair'}, 'maxItems': 4, 'minItems': 4, 'title': 'Quadrant', 'type': 'array'}}, 'required': ['quadrant'], 'title': 'WeatherQAQuadrant', 'type': 'object'}
+
+
+GENERATED SCHEMA (PPRINTED):
+
+{
+  "$defs": {
+    "WeatherQAPair": {
+      "properties": {
+        "question": {
+          "description": "Weather question",
+          "title": "Question",
+          "type": "string"
+        },
+        "answer": {
+          "description": "Weather answer",
+          "title": "Answer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "question",
+        "answer"
+      ],
+      "title": "WeatherQAPair",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "quadrant": {
+      "items": {
+        "$ref": "#/$defs/WeatherQAPair"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "title": "Quadrant",
+      "type": "array"
+    }
+  },
+  "required": [
+    "quadrant"
+  ],
+  "title": "WeatherQAQuadrant",
+  "type": "object"
+}
+
+
+OWN SCHEMA (RAW):
+
+
+{
+  "type": "object",
+  "required": [
+    "quadrant"
+  ],
+  "properties": {
+    "quadrant" : {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "question",
+          "answer"
+        ]
+      },
+      "minItems": 4,
+      "maxItems": 4
+    }
+  }
+}
+
+
+
+OWN SCHEMA (PPRINTED):
+
+{
+  "type": "object",
+  "required": [
+    "quadrant"
+  ],
+  "properties": {
+    "quadrant": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "question",
+          "answer"
+        ]
+      },
+      "minItems": 4,
+      "maxItems": 4
+    }
+  }
+}
+
+
+RAW RESPONSE OUTPUT TEXT:
+
+['{\n  "quadrant": [\n    {\n      "question": "What should I wear right now?",\n      "answer": "Comfortable clothing like a short-sleeve shirt or light layers is suitable for the current temperature of 70.0°F."\n    },\n    {\n      "question": "How are the sky conditions for stargazing?",\n      "answer": "Sky conditions are clear, providing unobstructed visibility of the sky."\n    },\n    {\n      "question": "Is it currently windy outside?",\n      "answer": "There is a gentle breeze from the south-southwest at 8 MPH."\n    },\n    {\n      "question": "Is it currently raining in the area?",\n      "answer": "No, the sky is clear and there is no active precipitation reported."\n    }\n  ]\n}', '{\n  "quadrant": [\n    {"question": "What is the current weather condition in Gainesville?", "answer": "The current weather is overcast with heavy rain, thunder, and observed lightning."},\n    {"question": "What kind of gear should I carry outside right now?", "answer": "Carry waterproof rain gear to stay dry from the heavy rain and dress warmly for temperatures around 53.1°F."},\n    {"question": "Is it safe to do outdoor activities right now?", "answer": "Outdoor activities are unsafe due to heavy rain, wind gusts up to 29 MPH, and observed lightning."},\n    {"question": "What are the current wind speeds?", "answer": "The wind is blowing from the north at 14 MPH with gusts reaching up to 29 MPH."}\n  ]\n}', '{\n  "quadrant": [\n    {\n      "question": "What kind of clothing should I wear right now?",\n      "answer": "With temperatures at 55.0°F and strong winds gusting up to 45 MPH, a windproof jacket or sturdy warm outer layer is recommended."\n    },\n    {\n      "question": "Are the current conditions good for outdoor activities?",\n      "answer": "High winds of 26 MPH with gusts reaching 45 MPH can make many outdoor activities hazardous or difficult despite the mild 55.0°F temperature."\n    },\n    {\n      "question": "Will I be able to stargaze tonight?",\n      "answer": "Sky visibility will be poor for stargazing due to mostly cloudy conditions."\n    },\n    {\n      "question": "Are there any weather safety hazards present?",\n      "answer": "Yes, southerly winds are blowing at 26 MPH with dangerous gusts up to 45 MPH, which could blow around loose items or cause tree damage."\n    }\n  ]\n}']
+
+
+RAW RESPONSE USAGE::
+
+:[Usage(cached_tokens_by_modality=None, grounding_tool_count=None, input_tokens_by_modality=[ModalityTokens(modality='text', tokens=243)], output_tokens_by_modality=None, tool_use_tokens_by_modality=None, total_cached_tokens=0, total_input_tokens=243, total_output_tokens=186, total_thought_tokens=0, total_tokens=429, total_tool_use_tokens=0), Usage(cached_tokens_by_modality=None, grounding_tool_count=None, input_tokens_by_modality=[ModalityTokens(modality='text', tokens=264)], output_tokens_by_modality=None, tool_use_tokens_by_modality=None, total_cached_tokens=0, total_input_tokens=264, total_output_tokens=175, total_thought_tokens=0, total_tokens=439, total_tool_use_tokens=0), Usage(cached_tokens_by_modality=None, grounding_tool_count=None, input_tokens_by_modality=[ModalityTokens(modality='text', tokens=257)], output_tokens_by_modality=None, tool_use_tokens_by_modality=None, total_cached_tokens=0, total_input_tokens=257, total_output_tokens=236, total_thought_tokens=0, total_tokens=493, total_tool_use_tokens=0)]
+
+
+RESPONSE 0/3:
+
+{
+  "quadrant": [
+    {
+      "question": "What should I wear right now?",
+      "answer": "Comfortable clothing like a short-sleeve shirt or light layers is suitable for the current temperature of 70.0\u00b0F."
+    },
+    {
+      "question": "How are the sky conditions for stargazing?",
+      "answer": "Sky conditions are clear, providing unobstructed visibility of the sky."
+    },
+    {
+      "question": "Is it currently windy outside?",
+      "answer": "There is a gentle breeze from the south-southwest at 8 MPH."
+    },
+    {
+      "question": "Is it currently raining in the area?",
+      "answer": "No, the sky is clear and there is no active precipitation reported."
+    }
+  ]
+}
+
+
+RESPONSE 1/3:
+
+{
+  "quadrant": [
+    {
+      "question": "What is the current weather condition in Gainesville?",
+      "answer": "The current weather is overcast with heavy rain, thunder, and observed lightning."
+    },
+    {
+      "question": "What kind of gear should I carry outside right now?",
+      "answer": "Carry waterproof rain gear to stay dry from the heavy rain and dress warmly for temperatures around 53.1\u00b0F."
+    },
+    {
+      "question": "Is it safe to do outdoor activities right now?",
+      "answer": "Outdoor activities are unsafe due to heavy rain, wind gusts up to 29 MPH, and observed lightning."
+    },
+    {
+      "question": "What are the current wind speeds?",
+      "answer": "The wind is blowing from the north at 14 MPH with gusts reaching up to 29 MPH."
+    }
+  ]
+}
+
+
+RESPONSE 2/3:
+
+{
+  "quadrant": [
+    {
+      "question": "What kind of clothing should I wear right now?",
+      "answer": "With temperatures at 55.0\u00b0F and strong winds gusting up to 45 MPH, a windproof jacket or sturdy warm outer layer is recommended."
+    },
+    {
+      "question": "Are the current conditions good for outdoor activities?",
+      "answer": "High winds of 26 MPH with gusts reaching 45 MPH can make many outdoor activities hazardous or difficult despite the mild 55.0\u00b0F temperature."
+    },
+    {
+      "question": "Will I be able to stargaze tonight?",
+      "answer": "Sky visibility will be poor for stargazing due to mostly cloudy conditions."
+    },
+    {
+      "question": "Are there any weather safety hazards present?",
+      "answer": "Yes, southerly winds are blowing at 26 MPH with dangerous gusts up to 45 MPH, which could blow around loose items or cause tree damage."
+    }
+  ]
+}
