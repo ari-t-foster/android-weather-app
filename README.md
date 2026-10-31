@@ -3,8 +3,8 @@
 ## Description
 This public repository contains selected Python tooling for geographic data preparation, spatial analysis, and Gemini integration experiments. The related Android application itself was developed collaboratively and is not included in this archive. The completed application and its updated Gemini integration are demonstrated through recorded workflows.
 
-## Project Case Study
-[Project Case Study (including demo videos of the CityWeather App)](https://github.com/ari-t-foster/projects/android-weather-app)
+## Project Case Study and Demo Videos
+[Project Case Study (including demo videos of the CityWeather App)](https://scienceopera.net/projects/android-weather-app)
 
 ## Android CityWeather App Attribution
 
